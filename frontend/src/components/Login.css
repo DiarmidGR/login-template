@@ -10,10 +10,6 @@
     align-items: center;
 }
 
-.login-message{
-    display:none;
-}
-
 .login-button{
     all:unset;
     width:fit-content;
@@ -55,4 +51,3 @@
 .text-center{
     text-align: center;
 }
-
