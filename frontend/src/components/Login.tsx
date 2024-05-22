@@ -9,11 +9,12 @@ function Login() {
   const [error, setError] = useState("");
 
   let navigate = useNavigate();
+  const apiUrl = import.meta.env.VITE_LOGIN_ENDPOINT;
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3001/login", {
+      const res = await axios.post(apiUrl, {
         username,
         password,
       });
