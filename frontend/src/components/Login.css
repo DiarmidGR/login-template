@@ -21,6 +21,10 @@
     transition: background-color 0.3s ease;
 }
 
+.login-message{
+    color:red;
+}
+
 .login-button:hover{
     background-color:var(--accent-two);
     color:var(--secondary-color);
