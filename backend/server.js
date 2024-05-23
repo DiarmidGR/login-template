@@ -1,26 +1,15 @@
 const express = require('express');
-const mysql = require('mysql2');
 const bcrypt = require('bcryptjs');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const dotenv = require('dotenv');
+const app = express();
+
 
 dotenv.config();
-const app = express();
+const db = require('./config/db.config');
+
 app.use(express.json(), cors());
-
-const db = mysql.createConnection({
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME
-});
-
-db.connect((err) => {
-    if (err) throw err;
-    console.log('MySQL connected...');
-});
 
 app.listen(3001, ()=> {
     console.log('Server running on port 3001');
